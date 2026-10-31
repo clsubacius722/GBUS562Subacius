@@ -1,0 +1,7 @@
+# Secrets: API keys and credentials must never be committed
+.env
+.env.*
+!.env.example
+*.key
+secrets.*
+credentials.*
