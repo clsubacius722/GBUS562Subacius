@@ -1,8 +1,8 @@
-# Serves the Prompt Lab at http://localhost:8562/ and saves its exports as .md files in Assignment-Week02/runs.
+# Serves the Prompt Lab at http://localhost:8562/ and saves its exports as .md files in the runs folder.
 # Run it with start-prompt-lab.bat. Close the window (or press Ctrl+C) to stop.
 $ErrorActionPreference = "Stop"
 $root = $PSScriptRoot
-$runs = Join-Path $root "Assignment-Week02/runs"
+$runs = Join-Path $root "runs"
 $port = 8562
 $origin = "http://localhost:$port"
 
@@ -33,24 +33,24 @@ try {
           $res.StatusCode = 403  # only this page may save files
         }
         else {
-          # task-0N.md for the task number the page sends (task-0N-2.md, ... if taken),
-          # otherwise the next free task-0N.md. Earlier exports are never overwritten.
+          # task-N.md for the task number the page sends (task-N-2.md, ... if taken),
+          # otherwise the next free task-N.md. Earlier exports are never overwritten.
           $task = $req.QueryString["task"]
           if ($task -match '^\d{1,2}$') {
             $task = [int]$task
-            $name = "task-{0:D2}.md" -f $task
+            $name = "task-{0}.md" -f $task
             $k = 2
-            while (Test-Path (Join-Path $runs $name)) { $name = "task-{0:D2}-{1}.md" -f $task, $k; $k++ }
+            while (Test-Path (Join-Path $runs $name)) { $name = "task-{0}-{1}.md" -f $task, $k; $k++ }
           }
           else {
             $n = 1
-            while (Test-Path (Join-Path $runs ("task-{0:D2}.md" -f $n))) { $n++ }
-            $name = "task-{0:D2}.md" -f $n
+            while (Test-Path (Join-Path $runs ("task-{0}.md" -f $n))) { $n++ }
+            $name = "task-{0}.md" -f $n
           }
           $reader = New-Object IO.StreamReader($req.InputStream, [Text.Encoding]::UTF8)
           $md = $reader.ReadToEnd()
           [IO.File]::WriteAllText((Join-Path $runs $name), $md, (New-Object Text.UTF8Encoding $false))
-          Write-Host "Saved Assignment-Week02/runs/$name"
+          Write-Host "Saved runs/$name"
           $bytes = [Text.Encoding]::UTF8.GetBytes($name)
           $res.ContentType = "text/plain; charset=utf-8"
           $res.OutputStream.Write($bytes, 0, $bytes.Length)
