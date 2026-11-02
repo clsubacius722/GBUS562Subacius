@@ -515,7 +515,7 @@
   // Headings used in the exported file; the on-screen log keeps its own labels.
   const EXPORT_HEADINGS = { system: "System", user: "Cheryl Subacius", assistant: "Claude" };
 
-  // Exports are saved into week-02/runs by start-prompt-lab.ps1, which serves this page
+  // Exports are saved into week-02/Assignment-Week02/runs by start-prompt-lab.ps1, which serves this page
   // at http://localhost:8562. Opened straight from disk, the page can only save to Downloads.
   function download(md, name) {
     const blob = new Blob([md], { type: "text/markdown" });
@@ -540,24 +540,27 @@
     const key = keyInput.value.trim();
     if (key) md = md.split(key).join("[API key removed]");
     md = md.replace(/sk-ant-[A-Za-z0-9_-]+/g, "[API key removed]");
-    // The launcher names the file task-01.md, task-02.md, ... (next free number in runs).
-    const name = "task-01.md";
+    // Name the file after the task number in the first prompt ("Task 3: ..." -> task-03.md).
+    // The launcher adds -2, -3, ... if that name is taken, and uses the next free number if there is none.
+    const firstPrompt = entries.find((e) => e.kind === "user" && e.exported);
+    const task = firstPrompt && (firstPrompt.text.match(/\bTask\s*0*(\d{1,2})\b/i) || [])[1];
+    const name = `task-${String(task || 1).padStart(2, "0")}.md`;
 
     if (location.protocol === "file:") {
-      alert(`To save into the week-02/runs folder, open the Prompt Lab with start-prompt-lab.bat. Saving ${name} to Downloads instead.`);
+      alert(`To save into the Assignment-Week02/runs folder, open the Prompt Lab with start-prompt-lab.bat. Saving ${name} to Downloads instead.`);
       download(md, name);
       return;
     }
     try {
-      const res = await fetch("/export", {
+      const res = await fetch("/export" + (task ? "?task=" + task : ""), {
         method: "POST",
         headers: { "content-type": "text/markdown; charset=utf-8" },
         body: md,
       });
       if (!res.ok) throw new Error("status " + res.status);
-      alert(`Saved ${await res.text()} to the week-02/runs folder.`);
+      alert(`Saved ${await res.text()} to the Assignment-Week02/runs folder.`);
     } catch (e) {
-      alert(`Could not save to the week-02/runs folder (${e.message}). Is start-prompt-lab still running? Saving to Downloads instead.`);
+      alert(`Could not save to the Assignment-Week02/runs folder (${e.message}). Is start-prompt-lab still running? Saving to Downloads instead.`);
       download(md, name);
     }
   }
