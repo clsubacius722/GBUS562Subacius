@@ -512,14 +512,22 @@
     promptBox.focus();
   }
 
+  // Headings used in the exported file; the on-screen log keeps its own labels.
+  const EXPORT_HEADINGS = { system: "System", user: "Cheryl Subacius", assistant: "Claude" };
+
   function exportMarkdown() {
-    const parts = [MODEL];
+    const parts = [new Date().toLocaleString("en-US", { month: "long" })];
     for (const e of entries) {
       if (!e.exported) continue;
       const note = e.kind === "system" && e.metaEl.textContent ? `(${e.metaEl.textContent})\n\n` : "";
-      parts.push(`### ${e.label}\n\n${note}${e.text}`);
+      parts.push(`### ${EXPORT_HEADINGS[e.kind] || e.label}\n\n${note}${e.text}`);
     }
-    const blob = new Blob([parts.join("\n\n") + "\n"], { type: "text/markdown" });
+    // Never let the API key reach the file, even if it was pasted into a prompt or system prompt.
+    let md = parts.join("\n\n") + "\n";
+    const key = keyInput.value.trim();
+    if (key) md = md.split(key).join("[API key removed]");
+    md = md.replace(/sk-ant-[A-Za-z0-9_-]+/g, "[API key removed]");
+    const blob = new Blob([md], { type: "text/markdown" });
     const stamp = new Date().toISOString().slice(0, 16).replace(/[:T]/g, "-");
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
