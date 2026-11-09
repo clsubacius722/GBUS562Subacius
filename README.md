@@ -12,3 +12,7 @@ This repository contains my weekly assignments for GBUS562 at the University of 
 2. week-02: [Prompt Lab](week-02/prompt-lab.html)
 
    A web app for testing prompts against Claude (`claude-sonnet-5`) through the Anthropic API, built with Claude Code. The [week-02 folder](week-02/) holds the Prompt Lab, its launcher (`start-prompt-lab.bat`, which saves each exported conversation as a Markdown file), four prompt-engineering runs for Wildframe Coffee Roasters in [runs](week-02/runs/) (zero-shot, one-shot, few-shot and chain-of-thought), and my [writeup](week-02/writeup.md). See the [week-02 README](week-02/README.md) for details.
+
+3. week-03: [Copperline RAG tool](week-03/)
+
+   Week 3: a RAG tool that answers questions from Copperline Manufacturing's finance documents, built with Claude Code. The source documents are in [copperline-docs](week-03/copperline-docs/).

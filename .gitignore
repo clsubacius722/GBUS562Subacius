@@ -5,3 +5,11 @@
 *.key
 secrets.*
 credentials.*
+
+# Python virtual environments
+.venv/
+
+# Chroma vector databases (rebuilt by week-03/ask.py)
+chroma-db/
+*.sqlite3
+__pycache__/
