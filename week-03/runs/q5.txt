@@ -1,0 +1,14 @@
+[1] similarity 0.524 | source: funds-availability-policy.html
+Funds Availability Policy [Version 3 (current)] | Check deposits For checks deposited at a branch or a Larkfield ATM, the first $275 of the day's chec...
+
+[2] similarity 0.502 | source: funds-availability-policy.html
+Funds Availability Policy [Version 3 (current)] | Mobile check deposits Checks deposited with the Larkfield mobile app follow the same availability as...
+
+[3] similarity 0.441 | source: card-dispute-procedure.html
+Debit Card Dispute Procedure [Version 4 (current)] | How much the member may have to pay A member's share of the loss from unauthorized debit card tra...
+
+[4] similarity 0.427 | source: funds-availability-policy.html
+Funds Availability Policy [Version 3 (current)] | Business days and cutoff times A business day is Monday through Friday, except federal holidays. A d...
+
+ANSWER
+Based on Larkfield Credit Union's Funds Availability Policy, for checks deposited at a branch, only the first $275 of the day's check deposits is available on the next business day. The remaining amount ($1,725) is available on the second business day after the day of deposit (Source: funds-availability-policy.html).

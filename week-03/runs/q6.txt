@@ -1,0 +1,14 @@
+[1] similarity 0.278 | source: consumer-fee-schedule.html
+Consumer Fee Schedule [Version 8 (current). Replaces Version 7] | Stop payments A stop payment on a check costs $30 per request. One request can cover...
+
+[2] similarity 0.246 | source: consumer-fee-schedule.html
+Consumer Fee Schedule [Version 8 (current). Replaces Version 7] | Checking account monthly fees Everyday Checking has no monthly service fee. Plus Che...
+
+[3] similarity 0.224 | source: share-certificates.html
+Share Certificates [Version 5 (current)] | Dividend rates - 6-month share certificate: 3.05% annual percentage yield (APY). - 12-month share certifica...
+
+[4] similarity 0.193 | source: consumer-fee-schedule.html
+Consumer Fee Schedule [Version 8 (current). Replaces Version 7] | Dormant accounts An account with no member-initiated activity for 24 months becomes ...
+
+ANSWER
+Larkfield Credit Union's documents do not contain that information.

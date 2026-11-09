@@ -45,7 +45,8 @@ DB_ROOT = WEEK_DIR / "chroma-db"
 KEY_DIR = WEEK_DIR.parent.parent  # the folder that contains the repository
 API_KEY_FILES = [KEY_DIR / "API-Key.txt", KEY_DIR / "APIKey.txt"]
 CHUNKER_VERSION = "sections-v2"  # change to force a rebuild when chunking logic changes
-MAX_WORDS = 300  # sections longer than this are split at paragraph breaks
+MAX_WORDS = 170  # sections longer than this are split at paragraph breaks (label adds ~15-20 words;
+                 # keeps chunks under the embedding model's ~190-word / 256-token limit)
 DEFAULT_TOP_K = 4
 PREVIEW_CHARS = 150
 

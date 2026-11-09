@@ -1,0 +1,14 @@
+[1] similarity 0.714 | source: card-dispute-procedure.html
+Debit Card Dispute Procedure [Version 4 (current)] | How much the member may have to pay A member's share of the loss from unauthorized debit card tra...
+
+[2] similarity 0.580 | source: card-dispute-procedure.html
+Debit Card Dispute Procedure [Version 4 (current)] | When a member reports a transaction they did not make When a member says a debit card transaction...
+
+[3] similarity 0.461 | source: card-dispute-procedure.html
+Debit Card Dispute Procedure [Version 4 (current)] | Provisional credit Larkfield investigates every dispute. If the investigation is not finished wit...
+
+[4] similarity 0.447 | source: card-dispute-procedure.html
+Debit Card Dispute Procedure [Version 4 (current)] | The dispute form The member must sign a dispute form listing each transaction they are disputing....
+
+ANSWER
+If the member reports the lost card within two business days of learning about it, they are liable for no more than $50. (Source: card-dispute-procedure.html)

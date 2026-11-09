@@ -1,0 +1,14 @@
+[1] similarity 0.720 | source: consumer-fee-schedule.html
+Consumer Fee Schedule [Version 8 (current). Replaces Version 7] | Overdraft and returned item fees When Larkfield pays a check, debit card purchase, o...
+
+[2] similarity 0.628 | source: consumer-fee-schedule.html
+Consumer Fee Schedule [Version 8 (current). Replaces Version 7] | Checking account monthly fees Everyday Checking has no monthly service fee. Plus Che...
+
+[3] similarity 0.580 | source: consumer-fee-schedule.html
+Consumer Fee Schedule [Version 8 (current). Replaces Version 7] | Dormant accounts An account with no member-initiated activity for 24 months becomes ...
+
+[4] similarity 0.560 | source: consumer-fee-schedule.html
+Consumer Fee Schedule [Version 8 (current). Replaces Version 7] | Stop payments A stop payment on a check costs $30 per request. One request can cover...
+
+ANSWER
+The overdraft fee is **$29 per item paid** when Larkfield pays a check, debit card purchase, or automatic payment that overdraws a member's checking account. No more than three such fees apply per account per business day, and no fee is charged if the account is overdrawn by $10 or less at day's end (Source: consumer-fee-schedule.html).

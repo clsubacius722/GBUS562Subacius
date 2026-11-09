@@ -1,0 +1,14 @@
+[1] similarity 0.616 | source: consumer-fee-schedule.html
+Consumer Fee Schedule [Version 8 (current). Replaces Version 7] | ATM and debit card fees Withdrawals at Larkfield ATMs and at CO-OP network ATMs are ...
+
+[2] similarity 0.562 | source: card-dispute-procedure.html
+Debit Card Dispute Procedure [Version 4 (current)] | How much the member may have to pay A member's share of the loss from unauthorized debit card tra...
+
+[3] similarity 0.533 | source: card-dispute-procedure.html
+Debit Card Dispute Procedure [Version 4 (current)] | When a member reports a transaction they did not make When a member says a debit card transaction...
+
+[4] similarity 0.460 | source: consumer-fee-schedule.html
+Consumer Fee Schedule [Version 8 (current). Replaces Version 7] | Official checks and money orders A cashier's check costs $8. A money order costs $3....
+
+ANSWER
+Rush delivery for a replacement debit card costs $30 (Source: consumer-fee-schedule.html).
