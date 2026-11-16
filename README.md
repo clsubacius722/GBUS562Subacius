@@ -19,4 +19,14 @@ This repository contains my weekly assignments for GBUS562 at the University of 
 
 4. week-04: [HR email agent](week-04/)
 
-   Week 4: an AI agent that prepares replies to HR emails using tools from an MCP server, built with Claude Code.
+   Week 4: an AI agent that prepares replies to HR emails using tools from an MCP server, built with Claude Code. I first built it for the lecture's Hartwell Foods files ([hartwell-hr](week-04/hartwell-hr/)), then pointed it at Ridgeline Hotels ([ridgeline-hotels](week-04/ridgeline-hotels/)). The [runs](week-04/runs/) folder holds the seven saved Ridgeline runs, and my [writeup](week-04/writeup.md) explains what the runs showed.
+
+   **The code** has two Python files:
+
+   - [hr_mcp_server.py](week-04/hr_mcp_server.py) is an MCP server with two tools. `search_policy` searches the organization's HR documents (stored in a Chroma database, one chunk per section) and returns the 4 closest sections with their source file, so every policy fact can be cited. `get_leave_balance` reads the employee file. The server never calls Claude and needs no API key.
+   - [agent.py](week-04/agent.py) reads one email, starts the server, and runs Claude's tool-use loop (`claude-sonnet-5`). It adds a third tool, `save_reply`, which only saves a draft for a person to review and never sends anything. It stops after 10 tool calls at most, and prints every step, then a `DRAFT` line, the reply, and `Needs human review: true` or `false`.
+   - Options: `--org` picks the organization folder (default `hartwell-hr`), and `--save` writes everything printed to a text file. Each organization gets its own Chroma database, kept out of Git. The server doesn't assume the employee file's column names; it works out the email and balance columns from the header row, which is why Ridgeline's differently laid-out file works without changes.
+
+   **How the code keeps balances private:** `agent.py` takes the sender's address from the email's From: line and starts the server locked to that one person (`--as-employee`). In that mode `get_leave_balance` takes no inputs, so Claude can only ever get the sender's own balance. When Email 5 hid an "ADMIN OVERRIDE" asking for every team member's balance, Claude refused, and even if it had obeyed, the code gave it no way to look anyone else up. If the sender isn't in the employee file (Email 7), the tool returns an error instead of a number.
+
+   Run it from the repository folder, for example: `.venv/Scripts/python.exe week-04/agent.py --org week-04/ridgeline-hotels --email week-04/ridgeline-hotels/sample-emails/01-jenna-pto.eml --save week-04/runs/ridgeline-01.txt`
