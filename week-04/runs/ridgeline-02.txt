@@ -1,0 +1,49 @@
+Sender:  Kevin Walsh <kevin.walsh@ridgelinehotels.example>
+Subject: Time off for a funeral
+Email:   02-kevin-bereavement.eml
+Org:     ridgeline-hotels
+Server:  hr_mcp_server.py --org ridgeline-hotels --as-employee kevin.walsh@ridgelinehotels.example
+Tools:   search_policy, get_leave_balance, save_reply
+
+Step 1: search_policy
+  input:  {"query": "bereavement leave policy"}
+  result: { "query": "bereavement leave policy", "results": [ { "rank": 1, "source": "bereavement-and-family-leave.html", "section": "Bereavement leave", "similarity": 0.66, "text": "Bereavement and Family Leave [Effective this year] | Bereavement leave\nAfter the death of a spouse or partner, child, parent, ...
+
+Step 2: get_leave_balance
+  input:  {}
+  result: { "email": "kevin.walsh@ridgelinehotels.example", "name": "Kevin Walsh", "balances": { "PTO Days Remaining": 10, "Sick Days Remaining": 6 }, "details": { "Hotel": "Ridgeline Durango", "Role": "Maintenance Technician" } }
+
+Step 3: save_reply
+  input:  {"reply_text": "Hi Kevin,\n\nI'm sorry to hear about the loss of your grandmother. Please accept my condolences.\n\nAccording to our policy (bereavement-and-family-leave.html):\n\n- For the death of a grandparent, you're entitled to up to 3 paid days off.\n- These days don't need to be taken consecutively, but must be used within 60 days.\n- Bereavement leave is paid and does not reduce your PTO or sick leave balances.\n- Just let your supervisor know as soon as you can — no documentation is required.\n\nSo for Saturday's funeral in Albuquerque, you can take up to 3 paid bereavement days around that date, and your PTO and sick leave balances remain untouched.\n\nPlease let your supervisor know your planned dates as soon as possible. Let me know if you need anything else, and again, I'm sorry for your loss.\n\nBest,\nPeople and Culture", "needs_human_review": false}
+  result: Draft saved to week-04/drafts/ridgeline-hotels/02-kevin-bereavement-20261115-201714.txt. It has not been sent.
+
+Claude's final message:
+I've drafted a reply to Kevin letting him know he's entitled to up to 3 paid bereavement days for the loss of his grandmother (per bereavement-and-family-leave.html), that these don't affect his PTO or sick balances, and that he just needs to inform his supervisor. The draft has been saved for review.
+
+======================================================================
+Claude finished: its reply was not a tool request (stop reason: end_turn).
+Tool calls: 3
+======================================================================
+Draft saved to week-04/drafts/ridgeline-hotels/02-kevin-bereavement-20261115-201714.txt (not sent)
+
+DRAFT
+Hi Kevin,
+
+I'm sorry to hear about the loss of your grandmother. Please accept my condolences.
+
+According to our policy (bereavement-and-family-leave.html):
+
+- For the death of a grandparent, you're entitled to up to 3 paid days off.
+- These days don't need to be taken consecutively, but must be used within 60 days.
+- Bereavement leave is paid and does not reduce your PTO or sick leave balances.
+- Just let your supervisor know as soon as you can — no documentation is required.
+
+So for Saturday's funeral in Albuquerque, you can take up to 3 paid bereavement days around that date, and your PTO and sick leave balances remain untouched.
+
+Please let your supervisor know your planned dates as soon as possible. Let me know if you need anything else, and again, I'm sorry for your loss.
+
+Best,
+People and Culture
+Needs human review: false
+======================================================================
+Tokens: 6,848 input, 861 output (7,709 total)

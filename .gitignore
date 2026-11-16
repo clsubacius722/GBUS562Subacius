@@ -13,3 +13,11 @@ credentials.*
 chroma-db/
 *.sqlite3
 __pycache__/
+
+# Week 4 Gmail sandbox files: keep outside the repo
+Agent-Email.txt
+Agent-email.txt
+Agent-Allowlist.txt
+
+# Week 4 agent drafts (copies of replies; the runs hold them)
+week-04/drafts/
